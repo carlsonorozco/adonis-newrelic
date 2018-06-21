@@ -1,0 +1,60 @@
+{
+  "name": "adonis-newrelic",
+  "version": "0.0.0",
+  "description": "NewRelic Provider for AdonisJs framework",
+  "homepage": "https://github.com/carlsonorozco/adonis-newrelic",
+  "bugs": {
+    "url": "https://github.com/carlsonorozco/adonis-newrelic/issues"
+  },
+  "license": "MIT",
+  "author": "Carlson Orozco <carlsonorozco@gmail.com>",
+  "scripts": {
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "posttest": "npm run coverage",
+    "test:local": "FORCE_COLOR=true node bin/index.js --local",
+    "test": "snyk test && nyc npm run test:local",
+    "test:win": "set FORCE_COLOR=true && node bin/index.js --win",
+    "coverage": "nyc report --reporter=lcov --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlsonorozco/adonis-newrelic.git"
+  },
+  "devDependencies": {
+    "@adonisjs/fold": "^4.0.7",
+    "@adonisjs/sink": "^1.0.16",
+    "coveralls": "^3.0.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "japa": "^1.0.6",
+    "japa-cli": "^1.0.1",
+    "nyc": "^11.6.0",
+    "snyk": "^1.70.3",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "@adonisjs/generic-exceptions": "^2.0.0",
+    "newrelic": "^4.2.0"
+  },
+  "keywords": [
+    "adonisjs",
+    "adonis",
+    "adonis-framework",
+    "newrelic",
+    "monitor"
+  ],
+  "standard": {
+    "globals": [
+      "use"
+    ]
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.js",
+      "bin"
+    ]
+  },
+  "directories": {
+    "test": "test"
+  }
+}
